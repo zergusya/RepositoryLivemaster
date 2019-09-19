@@ -6,26 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
     <div class="main">
         <div class="sort">
             <span>Сортировка по&nbsp;</span>
-            <span class="down"> возрастанию&nbsp;</span>
-            <span class="down">убыванию</span>
+            <a href="#" class="up" onclick="up"> возрастанию&nbsp;</a>
+            <a href="#" class="down" onclick="down">убыванию</a>
         </div>
         <div class="block">
-            <div class="number" id="p1"><div class="p1">1</div></div>
-            <div class="number" id="p2"><div class="p1">2</div></div>
-            <div class="number" id="p3"><div class="p1">3</div></div>
-            <div class="number" id="p4"><div class="p1">4</div></div>
-            <div class="number" id="p5"><div class="p1">5</div></div>
-            <div class="number" id="p6"><div class="p1">6</div></div>
-            <div class="number" id="p7"><div class="p1">7</div></div>
-            <div class="number" id="p8"><div class="p1">8</div></div>
+            <ul class="block1" id="block"> 
+            <li class="number" id="p1">1</li>
+            <li class="number" id="p1">2</li>
+            <li class="number" id="p1">8</li>
+            <li class="number" id="p1">4</li>
+            <li class="number" id="p1">5</li>
+            <li class="number" id="p1">6</li>
+            <li class="number" id="p1">7</li>
+            <li class="number" id="p1">3</li>
+            <li>
         </div>
         <div class="footer">
-            <div><input type="button" disabled value="Удалить"></div>
+            <div><input type="button" disabled value="Удалить" id="button"></div>
             <div>
                 <button class="max"></button>
                 <button class="min"></button>
@@ -33,5 +36,43 @@
         </div>
 
     </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+       $(document).ready(function(){
+
+
+$("#block").sortable();
+$("#block").disableSelection();
+
+
+});
+
+
+
+$('.down').click(function(){
+    var $elements = $('.number');
+    var $target = $('.block ul');
+    
+    var sort = $elements.sort(function (a, b) {
+        var an = $(a).text(),
+            bn = $(b).text();
+        
+        if (an && bn) {
+            return an.toUpperCase().localeCompare(bn.toUpperCase());
+        }
+        
+        return 0;
+    });
+    console.log(sort);
+    $target.html('');
+    $target.append(sort);
+});
+
+
+
+
+
+        </script>
 </body>
 </html>
