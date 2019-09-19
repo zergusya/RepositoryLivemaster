@@ -46,15 +46,27 @@
     justify-content: space-between;
     margin: 20px 20px 0 20px;
 }
+
 .max {
     background-image: url(../resources/glyphicons-halflings.png);
     background-position: -241px -2px;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
+    border: none;
+    padding: 0;
 }
 .min {
     background-image: url(../resources/glyphicons-halflings.png);
     background-position: -215px -2px;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 12px;
+    border: none;
+    padding: 2px;
+}
+
+.min:hover {
+    transform: scale(1.2);
+}
+.max:hover {
+    transform: scale(1.2);
 }
