@@ -17,63 +17,29 @@
         </div>
         <div class="block">
             <ul class="block1" id="block"> 
-            <li class="number" id="p1">1</li>
-            <li class="number" id="p1">2</li>
-            <li class="number" id="p1">8</li>
-            <li class="number" id="p1">4</li>
-            <li class="number" id="p1">5</li>
-            <li class="number" id="p1">6</li>
-            <li class="number" id="p1">7</li>
-            <li class="number" id="p1">3</li>
-            <li>
+                <li class="number" id="p1">1</li>
+                <li class="number" id="p2">2</li>
+                <li class="number" id="p3">3</li>
+                <li class="number" id="p4">4</li>
+                <li class="number" id="p5">5</li>
+                <li class="number" id="p6">6</li>
+                <li class="number" id="p7">7</li>
+                <li class="number" id="p8">8</li>
+            <ul>
         </div>
         <div class="footer">
-            <div><input type="button" disabled value="Удалить" id="button"></div>
+            <div class="test1"><input type="button" disabled value="Удалить" id="button"></div>
             <div>
-                <button class="max"></button>
                 <button class="min"></button>
+                <button class="max"></button>
             </div>
         </div>
 
     </div>
+    <li class="test">8</li>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-       $(document).ready(function(){
-
-
-$("#block").sortable();
-$("#block").disableSelection();
-
-
-});
-
-
-
-$('.down').click(function(){
-    var $elements = $('.number');
-    var $target = $('.block ul');
-    
-    var sort = $elements.sort(function (a, b) {
-        var an = $(a).text(),
-            bn = $(b).text();
-        
-        if (an && bn) {
-            return an.toUpperCase().localeCompare(bn.toUpperCase());
-        }
-        
-        return 0;
-    });
-    console.log(sort);
-    $target.html('');
-    $target.append(sort);
-});
-
-
-
-
-
-
-        </script>
+    <script src="js/javascript.js"></script>
+    <li class="test">8</li>
 </body>
 </html>
