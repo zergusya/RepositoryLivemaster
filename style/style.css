@@ -3,6 +3,10 @@
     list-style-type: none;
 }
 
+ul {
+    text-align: center;
+}
+
 ul li{
     vertical-align: middle;
 }
@@ -47,6 +51,7 @@ ul li{
 .number {
     width: 200px;
     height: 200px;
+    line-height: 200px;
     background-color: rgb(107, 40, 2);
     margin: 20px 0 0 20px;
     font-size: 100px;
@@ -83,7 +88,6 @@ ul li{
     padding: 2px;
     transform: scale(0.9);
 }
-
 .min:hover {
     transform: scale(1.1);
 }
@@ -100,23 +104,22 @@ ul li{
     display: none;
 }
 
-.number2 {
-    width: 420px;
-    height: 420px;
-    font-size: 200px;
-}
-.number1 {
-    width: 200px;
-    height: 200px;
-    font-size: 100px;
-}
-
-
-.pop{
+.pop {
     width: 194px;
     height: 194px;
     margin: 20px 0 0 20px;
     background-color: wheat;
     border: medium dotted black;
+}
 
+.block2 .number {
+    width: 420px;
+    height: 420px;
+    font-size: 200px;
+    line-height: 420px;
+}
+
+.block2 .pop {
+    width: 420px;
+    height: 420px;
 }

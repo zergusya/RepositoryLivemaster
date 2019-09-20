@@ -1,25 +1,25 @@
-       $(document).ready(function(){
+$(document).ready(function () {
 
 
-$("#block").sortable({
-placeholder:'pop'
+    $("#block").sortable({
+        placeholder: 'pop'
+    });
+    $("#block").disableSelection();
 });
-$("#block").disableSelection();
-});
 
 
-$('.down').click(function(){
+$('.down').click(function () {
     var $elements = $('.number');
     var $target = $('.block ul');
-    
+
     var sort = $elements.sort(function (a, b) {
         var an = $(a).text(),
             bn = $(b).text();
-        
+
         if (an && bn) {
             return bn.toUpperCase().localeCompare(an.toUpperCase());
         }
-        
+
         return 0;
     });
     console.log(sort);
@@ -28,28 +28,26 @@ $('.down').click(function(){
     $elements
 });
 
-$('.up').click(function(){
+$('.up').click(function () {
     var $elements = $('.number');
     var $target = $('.block ul');
-    
+
     var sort = $elements.sort(function (a, b) {
         var an = $(a).text(),
             bn = $(b).text();
-        
+
         if (an && bn) {
             return an.toUpperCase().localeCompare(bn.toUpperCase());
         }
-        
         return 0;
     });
     console.log(sort);
     $target.html('');
-    $target.append(sort);
+    $target.append(sort);    
 });
 
 
-
-$('.number').click(function(){
+$(document).on('click', '.number', function () {
     $(this).toggleClass('selected');
     var items = $('.selected');
 
@@ -60,21 +58,34 @@ $('.number').click(function(){
     }
 });
 
-$('#button').click(function(){
+$('#button').click(function () {
     var items = $('.selected');
     items.remove();
 });
 
 
-$('.max').click(function(){
-    $('li').removeClass('number1')
-    $('li').addClass('number2',)
+$('.max').click(function () {
+    $('ul').addClass('block2');
 });
-$('.min').click(function(){
-    $('li').removeClass('number2')
-    $('li').addClass('number1')
+$('.min').click(function () {
+    $('ul').removeClass('block2');
 });
 
 
+/*$('.down').click(function () {
+    items = $('.block1 .number');
+    arItems = $.makeArray(items);
+    arItems.sort(function (a, b) {
+        return $(a).data("sort") - $(b).data("sort")
+    });
+    $(arItems).appendTo(".block1");
+});
 
-
+$('.up').click(function () {
+    items = $('.block1 .number');
+    arItems = $.makeArray(items);
+    arItems.sort(function (b, a) {
+        return $(a).data("sort") - $(b).data("sort")
+    });
+    $(arItems).appendTo(".block1");
+});*/
